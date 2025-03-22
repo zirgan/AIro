@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="globalsFORM.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="styleguideFORM.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Плавный скролл
+        const links = document.querySelectorAll(".home a");
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        });
+
+        // Открытие и закрытие формы
+        const consultationButton = document.querySelector(".style-primary-small-3");
+        const formContainer = document.getElementById("form-popup");
+        const closeButton = document.getElementById("close-form");
+
+        if (consultationButton && formContainer && closeButton) {
+          consultationButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            formContainer.style.display = "flex";
+          });
+
+          closeButton.addEventListener("click", function () {
+            formContainer.style.display = "none";
+          });
+
+          // Закрытие формы при клике вне её области
+          formContainer.addEventListener("click", function (e) {
+            if (e.target === formContainer) {
+              formContainer.style.display = "none";
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="home">
+      <div class="div">
+        <!-- Пример разделов и ссылок -->
+        <div id="#ГлавнаяСтраница" class="home"></div>
+        <div id="Преимущества" class="layout-wrapper"></div>
+        <div id="ПримерыРабот" class="frame"></div>
+        <div id="Ответы" class="view"></div>
+        <div class="overlap">
+          <div class="view">
+            <div class="content">
+              <img class="airo5" src="img/airo5.svg" />
+            </div>
+          </div>
+          <div class="frame">
+            <div class="FAQ">
+              <div class="container">
+                <div class="section-title">
+                  <div class="content-2">
+                    <div class="text-wrapper-2">FAQs</div>
+                    <p class="text">
+                      Найдите ответы на распространенные вопросы о чат-боте на основе искусственного интеллекта и о том,
+                      как он может принести пользу вашему бизнесу.
+                    </p>
+                  </div>
+                  <div class="actions">
+                    <a href="contact.html" style="text-decoration: none; color: inherit;">
+                        <div class="div-wrapper">
+                            <div class="text-wrapper-3">Связаться с нами</div>
+                        </div>
+                    </a>
+                    <img class="airo4" src="img/airo4.png" />
+                    <img class="robo" src="img/robo.png" />
+                </div>                              
+                </div>
+                <div class="accordion-list">
+                  <div class="toggleable">
+                    <input class="toggleable__control hidden--visually" id="toggleable1" type="checkbox" />
+                    <label class="toggleable__label" for="toggleable1">Что такое ИИ чат-боты?</label>
+                    <div class="toggleable__content">Чат-боты с искусственным интеллектом — это автоматизированные помощники, которые общаются с клиентами. Они помогают отвечать на вопросы, поддерживают клиентов и делают общение более интересным. Благодаря технологии понимания человеческой речи, такие боты могут точно понимать запросы и быстро давать нужные ответы, что делает взаимодействие удобным и эффективным для пользователей.</div>
+                  </div>
+                  <div class="toggleable">
+                    <input class="toggleable__control hidden--visually" id="toggleable2" type="checkbox" />
+                    <label class="toggleable__label" for="toggleable2">Как они работают?</label>
+                    <div class="toggleable__content">Чат-боты с искусственным интеллектом используют специальные алгоритмы, которые анализируют запросы пользователей и создают подходящие ответы. Они обучаются на примерах общения, чтобы со временем становиться точнее. Это помогает ботам давать более полезные ответы и делает общение с ними комфортнее для пользователей.</div>
+                  </div>
+                  <div class="toggleable">
+                    <input class="toggleable__control hidden--visually" id="toggleable3" type="checkbox" />
+                    <label class="toggleable__label" for="toggleable3">В чем преимущество их использования?</label>
+                    <div class="toggleable__content">Чат-боты с искусственным интеллектом помогают значительно сократить затраты на обслуживание и ускорить время отклика. Они работают круглосуточно, поэтому клиенты могут получить помощь в любое время. К тому же боты способны отвечать на несколько запросов сразу, что повышает общую эффективность обслуживания.</div>
+                  </div>
+                  <div class="toggleable">
+                    <input class="toggleable__control hidden--visually" id="toggleable4" type="checkbox" />
+                    <label class="toggleable__label" for="toggleable4">Можно ли их настраивать?</label>
+                    <div class="toggleable__content">Да, чат-боты на основе искусственного интеллекта можно адаптировать под нужды вашего бизнеса и брендинг. Вы можете настроить их ответы, внешний вид и функциональность в соответствии со своими целями. Такая гибкость позволяет сделать клиентский опыт более персонализированным.</div>
+                  </div>
+                  <div class="toggleable">
+                    <input class="toggleable__control hidden--visually" id="toggleable5" type="checkbox" />
+                    <label class="toggleable__label" for="toggleable5">Где их можно использовать?</label>
+                    <div class="toggleable__content">Чат-ботов можно внедрить практически в любую известную соц сеть и мессенджер, такие как Telegram, Instagram, WhatsApp, Viber, Facebook, ВКонтакте. Также их можно внедрить в Авито, либо использовать как виджет на вашем сайте.</div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+          </div>
+          <div class="layout-wrapper">
+            <div class="layout">
+                <div class="text-wrapper-4">Примеры работ</div>
+                <div class="overlap-group-wrapper block">
+                    <div class="overlap-group-3">
+                        <div class="medium-length-hero">ИИ продавец</div>
+                        <p class="lorem-ipsum-dolor">
+                            ИИ продавец магазина экзотических фруктов. Предложит ассортимент экзотических плодов, поможет
+                            собрать корзину с учетом ваших вкусов. Уточнит адрес доставки, ответит на вопросы о происхождении и
+                            пользе каждого фрукта, а затем передаст заказ реальному продавцу для быстрой отправки.
+                        </p>
+                        <a href="try-it.html" style="text-decoration: none; color: inherit; position: absolute; top: 811px; left: 117px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background-color: #f4a900; border: 1px solid; height: 72px;">
+                            <div class="text-wrapper-5">Попробовать</div>
+                        </a>
+                        <img class="image" src="img/image.png" />
+                    </div>
+                </div>
+                <div class="overlap-wrapper block">
+                    <div class="overlap-3">
+                        <a href="try-it-2.html" style="text-decoration: none; color: inherit; position: absolute; top: 811px; left: 103px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background-color: #f4a900; border: 1px solid; height: 72px;">
+                            <div class="text-wrapper-6">Попробовать</div>
+                        </a>
+                        <p class="p">
+                            Консультант детейлинг-центра.<br />Ваш виртуальный помощник по уходу за автомобилем! ИИ подберет
+                            услуги детейлинга, такие как оклейка защитной пленкой, полировка, шумоизоляция и покраска дисков,
+                            объяснит детали и преимущества. С учетом пожеланий составит заявку и передаст её мастерам для
+                            быстрого выполнения.
+                        </p>
+                        <div class="medium-length-hero-2">ИИ консультант</div>
+                        <img class="image-2" src="img/image-4.png" />
+                    </div>
+                </div>
+                <div class="view-2 block">
+                    <div class="overlap-4">
+                        <div class="medium-length-hero-3">ИИ администратор</div>
+                        <a href="try-it-3.html" style="text-decoration: none; color: inherit; position: absolute; top: 811px; left: 111px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background-color: #f4a900; border: 1px solid; height: 72px;">
+                            <div class="text-wrapper-6">Попробовать</div>
+                        </a>
+                        <img class="image-3" src="img/image-2.png" />
+                        <p class="text-wrapper-7">
+                            ИИ администратор салона лазерной эпиляции. Запишет на процедуру, учтет все ваши пожелания, напомнит
+                            о подготовке. Задаст уточняющие вопросы, ответит на любые запросы по процедуре и послеуходу, соберет
+                            контактные данные и передаст информацию реальному администратору.
+                        </p>
+                        <img class="airo-3" src="img/airo3.svg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+          <div class="frame-3">
+            <div class="container-wrapper">
+              <div class="container-2">
+                <div class="overlap-5">
+                  <div class="overlap-6">
+                    <div class="frame-4">
+                      <img class="airo2" src="img/airo2.png" />
+                      <div class="overlap-group-4">
+                        <img class="mask-group" src="img/mask-group.png" />
+                        <p class="lorem-ipsum-dolor-2">
+                          Чат-бот доступен 24/7, что улучшает клиентский сервис и увеличивает удовлетворенность
+                          клиентов, мотивируя их возвращаться.
+                        </p>
+                        <div class="medium-length-hero-4">Круглосуточная работа</div>
+                      </div>
+                      <div class="medium-length-hero-5">Снятие рутины <br />с сотрудников</div>
+                      <img class="mechanik" src="img/mechanik.png" />
+                      <p class="lorem-ipsum-dolor-3">
+                        Автоматизация рутинных задач позволяет сократить затраты на персонал и повысить эффективность
+                        процессов
+                      </p>
+                    </div>
+                    <p class="medium-length-hero-6">Интеграция с любой соц сетью</p>
+                    <img class="socset" src="img/socset.png" />
+                    <p class="lorem-ipsum-dolor-4">
+                      Интеграция с соцсетями увеличивает охват аудитории и упрощает взаимодействие с клиентами. Это
+                      улучшает клиентский сервис и повышает лояльность, а также позволяет собирать данные для
+                      оптимизации маркетинга.
+                    </p>
+                  </div>
+                  <div class="prodaji">Повышение продаж <br />и рост прибыли</div>
+                  <p class="lorem-ipsum-dolor-5">
+                    Чат-бот помогает клиентам находить нужные товары и услуги, направляя их по воронке продаж и повышая
+                    вероятность покупки.
+                  </p>
+                  <img class="raketa" src="img/raketa.png" />
+                </div>
+                <p class="text-wrapper-8">Преимущества внедрения ИИ чат-бота в малый и средний бизнес</p>
+              </div>
+            </div>
+          </div>
+          <img class="image-4" src="img/image-3.png" />
+        </div>
+        <div class="header">
+          <div class="column">
+            <div class="content-3">
+              <p class="medium-length-hero-8">
+                Повышайте эффективность бизнеса с чат-ботом на основе искусственного интеллекта
+              </p>
+              <p class="lorem-ipsum-dolor-6">
+                Раскройте потенциал вашего бизнеса с нашим ИИ чат-ботом. Круглосуточное общение с клиентами и повышение
+                эффективности — уже сегодня.
+              </p>
+            </div>
+            <div class="actions-2">
+              <a href="#" style="text-decoration: none; color: inherit;">
+                <div class="style-primary-small-3">
+                  <div class="text-wrapper-9">Получить консультацию</div>
+                </div>
+              </a>
+              <a href="https://t.me/yourTelegramChannel" style="text-decoration: none; color: inherit;">
+                <div class="style-secondary">
+                  <div class="text-wrapper-10">Написать нам в Telegram</div>
+                </div>
+              </a>
+            </div>
+          
+          </div>
+          <div class="home">
+            <div class="link-one">
+              <a href="#ГлавнаяСтраница" style="color: inherit; text-decoration: none;">Главная страница</a>
+            </div>
+            <div class="link-two-2">
+              <a href="#Преимущества" style="color: inherit; text-decoration: none;">Преимущества</a>
+            </div>
+            <div class="link-three-2">
+              <a href="#ПримерыРабот" style="color: inherit; text-decoration: none;">Примеры работ</a>
+            </div>
+            <div class="link-four-2">
+              <a href="#Ответы" style="color: inherit; text-decoration: none;">FAQs</a>
+            </div>
+          </div>
+          <img class="element-2" src="img/1.svg" />
+          <img class="result" src="img/result-1.png" />
+
+            <!-- Форма -->
+            <div id="form-popup" class="form-overlay" style="display: none;">
+              <div class="box">
+                <div class="group">
+                <div class="close-button" id="close-form">✖</div>
+                <div class="medium-length-hero">Заполните форму</div>
+                <div class="lorem-ipsum-dolor">Мы свяжемся с вами и ответим на все интересующие вопросы</div>            
+                  <div class="form-container">
+                    <form class="form">
+                        <input type="text" class="input-field" placeholder="Имя" required>
+                        <input type="text" class="input-field" placeholder="Ваш телеграмм" required>
+                        <input type="email" class="input-field" placeholder="Ваша почта" required>
+                        <input type="tel" class="input-field" placeholder="+7" required>
+                        <button class="submit-button">Отправить</button>
+                    </form>
+                </div>
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
